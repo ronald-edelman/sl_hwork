@@ -7,12 +7,12 @@ using Sanlam.Banking.Module.Processor;
 
 namespace Sanlam.Banking.Web
 {
-    [ApiController]
-    [Route("bank")]
-
     /// <summary>
     /// Restful controller to manage banking transactions such as Withdraw from account
     /// </summary>
+    
+    [ApiController]
+    [Route("bank")]
     public class BankAccountController : ControllerBase
     {
         private readonly IBankAccountProcessor _bankAccountProcessor;
