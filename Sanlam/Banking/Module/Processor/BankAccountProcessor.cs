@@ -11,6 +11,9 @@ using Sanlam.Banking.Module.Validation;
 
 namespace Sanlam.Banking.Module.Processor
 {
+    /// <summary>
+    /// Manage the Withdraw transaction in a transaction and publish event to notify of successful execution
+    /// </summary>
     public class BankAccountProcessor : IBankAccountProcessor
     {
         private readonly Data.EF.IAccountRepository _accountRepository;
