@@ -86,7 +86,7 @@ namespace Sanlam.Banking.Module.Processor
             var withdrawlEvent = new WithdrawalEvent(amount, accountId, true);
             var publishResponse = await _notificationManager.PublishEvent(withdrawlEvent);
 
-            if (publishResponse.HttpStatusCode == HttpStatusCode.OK && !string.IsNullOrEmpty(publishResponse.MessageId))
+            if (!(publishResponse.HttpStatusCode == HttpStatusCode.OK && !string.IsNullOrEmpty(publishResponse.MessageId)))
             {
                 //force a failure as the synchronisation message was not delivered, transaction should fail atomically
                 throw new Exception("Failed to deliver message");
